@@ -1,0 +1,129 @@
+/* ==========================================================================
+   1. RESET & ANIMAÇÃO DE FUNDO (Cores pedidas: Vermelho Pastel, Rosa e Branco Lua)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Gradiente mesclando Vermelho Pastel (#f3a1a1), Rosa Pastel (#fbc7d4) e Branco Lua (#eef2f3) */
+    background-image: linear-gradient(135deg, #f3a1a1cc, #fbc7d4cc, #eef2f3cc);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #2d3748; /* Texto cinza escuro suave para leitura perfeita */
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Links e botão de voltar */
+a {
+    text-decoration: none;
+    color: #c0392b; /* Vermelho mais forte suave para os links */
+    font-weight: bold;
+    transition: all 0.25s ease;
+}
+
+a:hover {
+    color: #e84393; /* Rosa vívido ao passar o mouse */
+}
+
+.back-link-container {
+    width: 100%;
+    max-width: 800px;
+    align-self: center;
+    margin-bottom: 15px;
+}
+
+.back-link-container a {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* ==========================================================================
+   2. CONTAINER PRINCIPAL (Estilo Vidro Fosco / Moonstone)
+   ========================================================================== */
+.room-container {
+    max-width: 800px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.45); /* Vidro claro baseado no Branco Lua */
+    backdrop-filter: blur(12px);
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Cabeçalho da página */
+h1 {
+    font-size: 2.2rem;
+    color: #1a202c;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+#h2-music {
+    font-size: 1.1rem;
+    color: #57606f;
+    font-weight: 500;
+    margin-bottom: 35px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   3. CARDS DE MÚSICA (Estrutura e Alinhamento)
+   ========================================================================== */
+.music-card {
+    background: rgba(255, 255, 255, 0.35); /* Mini caixas de vidro para cada som */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+}
+
+.music-card p {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #2c3e50;
+    max-width: 500px;
+}
+
+/* Capas dos álbuns customizadas */
+img {
+    height: auto;
+    width: 100%;
+    max-width: 320px; /* Tamanho controlado para não estourar na tela */
+    border-radius: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: block;
+}
+
+img:hover {
+    transform: scale(1.04); /* Zoom suave e responsivo */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Customização básica do player de áudio nativo */
+audio {
+    width: 100%;
+    max-width: 320px;
+    margin-top: 5px;
+    border-radius: 30px;
+}

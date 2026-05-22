@@ -1,0 +1,168 @@
+@import url("../css/style.css");
+
+/* ==========================================================================
+   1. FUNDO VERDE MENTA & ESMERALDA (Nova paleta exclusiva)
+   ========================================================================== */
+body {
+    /* Gradiente suave misturando um verde menta claro com um tom esmeralda pastel */
+    background-image: linear-gradient(135deg, #a8ff78cc, #78ffd6cc);
+    color: #1e293b; /* Texto escuro para dar contraste perfeito */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.1em;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Botão de voltar ISOLADO NO TOPO ESQUERDO */
+a[href="../img-gifs.html"] {
+    display: block;                  /* Força o botão a ser um bloco individual */
+    width: fit-content;              /* Ocupa apenas o tamanho do texto */
+    margin-right: auto;              /* Empurra totalmente para a esquerda */
+    margin-bottom: 30px;             /* Empurra o título para baixo */
+    
+    background: rgba(255, 255, 255, 0.5); /* Vidro claro */
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #0f766e;                  /* Tom esmeralda escuro para o texto */
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+/* Hover no botão de voltar */
+a[href="../img-gifs.html"]:hover {
+    background: rgba(255, 255, 255, 0.85);
+    color: #10b981;                  /* Verde esmeralda vivo no hover */
+    transform: scale(1.05);
+}
+
+a[href="../img-gifs.html"]::before {
+    content: "‹ ";
+    font-size: 1.2rem;
+}
+
+/* Títulos da Página */
+h1 {
+    font-size: 2.4rem;
+    color: #0f172a;
+    margin-bottom: 8px;
+    text-align: center;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+h2 {
+    font-size: 1.1rem;
+    color: #334155;
+    font-weight: 500;
+    margin-bottom: 35px;
+    text-align: center;
+    max-width: 700px;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   2. GRADE DE GIFS (Layout Responsivo em Grid)
+   ========================================================================== */
+.gif-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   3. DESIGN DOS CARDS DE GIF (Efeito Vidro Fosco Premium)
+   ========================================================================== */
+.gif-card {
+    background-color: rgba(255, 255, 255, 0.4); /* Vidro menta translúcido */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+    overflow: hidden;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Efeito ao passar o mouse no card do GIF */
+.gif-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(15, 118, 110, 0.15); /* Sombra esmeralda suave */
+    border-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Estilização do GIF de fato */
+.gif-card img {
+    width: 100%;
+    height: 250px; /* Um pouco mais alto para os GIFs brilharem bem */
+    object-fit: cover; /* Preenche o espaço sem distorcer o meme */
+    border-radius: 24px 24px 0 0;
+}
+
+/* Texto descritivo embaixo do GIF */
+/* Ajuste na caixinha de informações para alinhar o texto e o botão */
+.gif-info {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza tudo */
+    gap: 12px; /* Cria um espaço perfeito entre o texto e o botão */
+}
+
+.gif-info p {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0;
+    text-shadow: none;
+}
+
+/* O Lindo Botão de Download */
+.btn-download {
+    display: inline-flex !important; /* Força o comportamento flex para alinhar */
+    align-items: center;
+    justify-content: center;
+    background-color: #0f766e; /* Tom esmeralda escuro para destacar */
+    color: #ffffff !important; /* Texto branco puro */
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    width: 100%; /* Faz o botão ocupar a largura interna do card */
+    max-width: 180px; /* Mas limita para não ficar gigante */
+    transition: all 0.2s ease-in-out !important;
+    box-shadow: 0 4px 10px rgba(15, 118, 110, 0.2);
+}
+
+/* Efeito ao passar o mouse no botão de Download (Hover) */
+.btn-download:hover {
+    background-color: #115e59; /* Escurece o verde de leve */
+    transform: scale(1.03) translateY(-2px); /* Sobe de leve */
+    box-shadow: 0 6px 15px rgba(15, 118, 110, 0.35);
+    color: #ffffff !important;
+}
+
+/* Remove a setinha global do style.css específica para esse botão */
+.btn-download::before {
+    content: "⬇ " !important; /* Coloca um ícone sutil de download antes do texto */
+    font-size: 0.95rem;
+    margin-right: 6px;
+}
+
+/* Efeito quando o botão for clicado */
+.btn-download:active {
+    transform: scale(0.98) translateY(0);
+}

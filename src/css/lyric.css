@@ -1,0 +1,198 @@
+@import url("./style.css");
+
+/* ==========================================================================
+   1. CONFIGURAÇÕES TEMA CHINÊS PASTEL VAPOR (Funcionam em tudo)
+   ========================================================================== */
+body {
+    /* Gradiente suave de 3 cores solicitado: Azul-Céu, Roxo-Rosado e Rosa Pastel */
+    background-image: linear-gradient(135deg, #87ceebcc, #d6a4e6cc, #ffc0cbcc);
+    font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    font-size: 1.1em;
+    color: #1a202c; /* Texto escuro elegante para contrastar com o fundo pastel */
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Links e navegação */
+a {
+    text-decoration: none;
+    color: #4f46e5;
+    font-weight: bold;
+    transition: all 0.25s ease;
+    display: inline-block;
+}
+
+a:hover {
+    color: #ff4757;
+    transform: scale(1.05);
+}
+
+/* Botão de voltar estilizado */
+.back-link {
+    align-self: flex-start;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.back-link::before {
+    content: "‹ ";
+}
+
+/* Texto da Letra (Pre) */
+pre.lyrics-text {
+    color: #2d3748;
+    font-family: inherit;
+    font-size: 1.2rem;
+    line-height: 2; /* Espaçamento ideal para ler os ideogramas e o Pinyin juntos */
+    white-space: pre-wrap;
+    text-shadow: none;
+}
+
+/* Divisor suave */
+hr {
+    border: 0;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 25px 0;
+}
+
+/* Link externo do YouTube */
+.video-link {
+    font-size: 0.95rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 8px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   2. REGRAS DA MÚSICA (O Refrão da Sorte/Prosperidade)
+   ========================================================================== */
+.chorus {
+    font-weight: bold;
+    color: #b91c1c; /* Vermelho Imperial Chinês para dar o destaque na letra */
+    background-color: rgba(255, 241, 242, 0.6); /* Fundo rosado bem leve para o refrão */
+    border-left: 4px solid #de2910; /* Barra vermelha tradicional da bandeira da China */
+    padding: 10px 15px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+    display: block;
+}
+
+/* Container do Vídeo Incorporado */
+.video-wrapper {
+    width: 100%;
+    max-width: 280px;
+    height: 200px;
+    border-radius: 16px;
+    border: 3px solid rgba(255, 255, 255, 0.8); /* Borda branca elegante de vidro */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.video-wrapper:hover {
+    transform: scale(1.03);
+}
+
+/* ==========================================================================
+   3. LAYOUT RESPONSIVO ADAPTADO (Mantendo sua estrutura foda)
+   ========================================================================== */
+
+/* --- LAYOUT CELULAR --- */
+@media (max-width: 767px) {
+    .lyric-container {
+        width: 100%;
+        max-width: 480px;
+        background-color: rgba(255, 255, 255, 0.55); /* Caixa clara estilo vidro */
+        backdrop-filter: blur(12px);
+        padding: 25px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .song-media {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin: 25px 0;
+    }
+}
+
+/* --- LAYOUT PC --- */
+@media (min-width: 768px) {
+    .lyric-container {
+        max-width: 950px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.55); /* Vidro fosco claro super clean */
+        padding: 45px;
+        border-radius: 24px;
+        backdrop-filter: blur(15px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        
+        display: grid;
+        grid-template-columns: 1fr 1.2fr; /* Coluna da letra ligeiramente maior para o chinês */
+        gap: 50px;
+        align-items: start;
+    }
+
+    .song-header {
+        grid-column: span 2;
+        text-align: left;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.06);
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+    }
+
+    .song-header h1 {
+        font-size: 3.2rem;
+        color: #111111;
+        margin-bottom: 5px;
+        font-weight: 800;
+    }
+
+    .song-header h2 {
+        font-size: 1.4rem;
+        color: #6b7280;
+    }
+
+    .song-media {
+        position: sticky;
+        top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        padding: 30px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    hr {
+        display: none;
+    }
+
+    pre.lyrics-text {
+        margin-top: 0;
+        text-align: left;
+    }
+}

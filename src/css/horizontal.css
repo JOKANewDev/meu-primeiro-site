@@ -1,0 +1,175 @@
+@import url("../css/style.css");
+
+/* ==========================================================================
+   1. FUNDO MINECRAFT & WONHEE (Verde Musgo Profundo com detalhes Neon)
+   ========================================================================== */
+body {
+    /* Gradiente que vai de um verde bem escuro (baseado na grama/terra) até um tom quase preto */
+    background-image: linear-gradient(135deg, #1b2e1b, #0d140d);
+    color: #e2e8f0; 
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.1em;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Botão de voltar ISOLADO NO TOPO ESQUERDO */
+a[href="../img-gifs.html"] {
+    display: block;                  /* Força o botão a ser um bloco individual */
+    width: fit-content;              /* Ocupa apenas o tamanho do texto */
+    margin-right: auto;              /* Joga totalmente para a esquerda */
+    margin-bottom: 30px;             /* Empurra o H1 para baixo */
+    
+    background: rgba(255, 255, 255, 0.05); 
+    padding: 10px 20px;
+    border-radius: 12px;             /* Borda um pouco mais quadrada estilo bloco */
+    border: 1px solid rgba(255, 105, 180, 0.3); /* Toque de rosa na borda */
+    color: #ff69b4;                  /* Texto rosa vibrante do casaco */
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover no botão de voltar */
+a[href="../img-gifs.html"]:hover {
+    background: #ff69b4;             /* Fundo vira o Rosa Vibrante */
+    color: #0d140d;                  /* Texto escuro do fundo */
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.6); /* Brilho neon rosa */
+    transform: scale(1.05);
+}
+
+a[href="../img-gifs.html"]::before {
+    content: "‹ ";
+    font-size: 1.2rem;
+}
+
+/* Títulos da Página */
+h1 {
+    font-size: 2.4rem;
+    color: #ffffff;
+    margin-bottom: 8px;
+    text-align: center;
+    border-bottom: none;
+    padding-bottom: 0;
+    text-shadow: 0 0 10px rgba(168, 255, 120, 0.2); /* Sutil brilho esverdeado */
+}
+
+h2 {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    font-weight: 500;
+    margin-bottom: 35px;
+    text-align: center;
+    max-width: 700px;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   2. GRADE DE WALLPAPERS HORIZONTAIS (Modo PC)
+   ========================================================================== */
+.wallpaper-grid {
+    display: grid;
+    /* Cards maiores de largura porque as imagens de PC são deitadas */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   3. DESIGN DOS CARDS (Proporção Monitor de PC 16:9)
+   ========================================================================== */
+.wallpaper-card {
+    background-color: rgba(0, 0, 0, 0.4); /* Vidro fumê bem escuro */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.wallpaper-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff69b4; /* Borda acende no rosa choque no hover */
+    box-shadow: 0 20px 40px rgba(255, 105, 180, 0.15); /* Sombra neon rosa bem sutil */
+}
+
+/* Container forçando formato de monitor (Deitado - Proporção Cinema/PC) */
+.img-container {
+    width: 100%;
+    height: 200px; /* Mais baixo que o de celular para ficar esticado para os lados */
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.wallpaper-card:hover .img-container img {
+    transform: scale(1.04);
+}
+
+/* Rodapé do Card */
+.wallpaper-info {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.wallpaper-info h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+/* Botão de Download Rosa Choque / Magenta */
+.btn-download {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff69b4; /* Rosa idêntico ao casaco */
+    color: #0d140d !important; /* Texto escuro para leitura perfeita */
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    width: 100%;
+    max-width: 220px;
+    transition: all 0.2s ease-in-out !important;
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.2);
+}
+
+.btn-download:hover {
+    background-color: #ff4da6; /* Rosa levemente mais escuro ao passar o mouse */
+    box-shadow: 0 6px 18px rgba(255, 105, 180, 0.4);
+    transform: scale(1.02);
+    color: #0d140d !important;
+}
+
+.btn-download::before {
+    content: "🖥️ " !important; /* Ícone de monitor combinando com a vibe PC */
+    font-size: 0.95rem;
+    margin-right: 6px;
+}
+
+.btn-download:active {
+    transform: scale(0.98);
+}

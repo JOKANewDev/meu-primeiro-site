@@ -1,0 +1,149 @@
+/* ==========================================================================
+   1. RESET & CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Cores adaptadas para o tema pastel suave */
+    --text-color: #2d3748;     /* Cinza escuro suave para leitura confortável */
+    --text-muted: #4a5568;
+    --accent-color: #4f46e5;   /* Um roxo/azul elegante para os links */
+    --accent-hover: #06b6d4;   /* Ciano vivo ao passar o mouse */
+}
+
+body {
+    /* O teu gradiente 120° Rosa Pastel e Azul-Céu */
+    background-image: linear-gradient(120deg, #ffc0cb, #87ceeb);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centraliza o conteúdo na tela do PC */
+}
+
+/* Container principal adaptável (PC e Celular) */
+.home-container {
+    max-width: 800px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.45); /* Caixa branca semi-transparente */
+    padding: 35px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px); /* Efeito blur de vidro super moderno */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================================
+   2. TIPOGRAFIA & BLOCOS
+   ========================================================================== */
+h1 {
+    font-size: 2rem;
+    color: #1a202c;
+    margin-bottom: 25px;
+    border-bottom: 3px solid white;
+    padding-bottom: 12px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.3rem;
+    color: #1a202c;
+    margin-bottom: 15px;
+}
+
+.knowledge-box, .navigation-box {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+/* Lista de tags estilizada */
+.tags-list {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.tags-list li {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+code {
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   3. MENU DE LINKS
+   ========================================================================== */
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.btn-link {
+    color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 20px;
+    border-radius: 10px;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* Ícone de seta dinâmico antes dos botões */
+.btn-link::before {
+    content: "›";
+    margin-right: 10px;
+    font-size: 1.4rem;
+    color: var(--accent-color);
+    transition: transform 0.2s ease;
+}
+
+/* Efeito Hover nos botões */
+.btn-link:hover {
+    background-color: white;
+    color: var(--accent-color);
+    transform: translateY(-3px); /* Faz o botão flutuar de leve */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+}
+
+.btn-link:hover::before {
+    transform: translateX(4px); /* Empurra a seta para o lado */
+}
+
+/* ==========================================================================
+   4. MEDIA QUERY PARA TELAS GRANDES (PC)
+   ========================================================================== */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    /* No PC, os botões ficam lado a lado em vez de empilhados */
+    .menu-buttons {
+        flex-direction: row;
+    }
+    
+    .btn-link {
+        flex: 1; /* Distribui o tamanho igualmente entre os 3 botões */
+        justify-content: center;
+    }
+}

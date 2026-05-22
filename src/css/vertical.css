@@ -1,0 +1,173 @@
+@import url("../css/style.css");
+
+/* ==========================================================================
+   1. FUNDO COZY TECH (Baseado nas cores da foto do doguinho)
+   ========================================================================== */
+body {
+    /* Gradiente indo do Azul Petróleo Escuro até um Cinza Azulado Fechado */
+    background-image: linear-gradient(135deg, #1e2640, #111625);
+    color: #f4f1ea; /* Texto em Bege Areia bem clarinho para dar um contraste confortável */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.1em;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Botão de voltar ISOLADO NO TOPO ESQUERDO */
+a[href="../img-gifs.html"] {
+    display: block;                  /* Força o botão a ser um bloco individual */
+    width: fit-content;              /* Ocupa apenas o tamanho do texto */
+    margin-right: auto;              /* Joga totalmente para a esquerda */
+    margin-bottom: 30px;             /* Empurra o H1 para baixo */
+    
+    background: rgba(244, 241, 234, 0.1); /* Vidro baseado no Bege Areia */
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(244, 241, 234, 0.2);
+    color: #e2a87c;                  /* Texto em Marrom Quente / Terracota Claro */
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover no botão de voltar */
+a[href="../img-gifs.html"]:hover {
+    background: #f4f1ea;             /* Fundo vira Bege Areia completo */
+    color: #1e2640;                  /* Texto vira o Azul Escuro */
+    transform: scale(1.05);
+}
+
+a[href="../img-gifs.html"]::before {
+    content: "‹ ";
+    font-size: 1.2rem;
+}
+
+/* Títulos da Página */
+h1 {
+    font-size: 2.4rem;
+    color: #f4f1ea;
+    margin-bottom: 8px;
+    text-align: center;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+h2 {
+    font-size: 1.1rem;
+    color: #a3a9b8; /* Cinza azulado suave para o subtítulo */
+    font-weight: 500;
+    margin-bottom: 35px;
+    text-align: center;
+    max-width: 700px;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   2. GRADE DE WALLPAPERS VERTICAIS
+   ========================================================================== */
+.wallpaper-grid {
+    display: grid;
+    /* Ajustado para caber telas em pé sem esmagar (mínimo de 250px) */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 35px;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   3. DESIGN DOS CARDS (Proporção de Tela de Celular)
+   ========================================================================== */
+.wallpaper-card {
+    background-color: rgba(255, 255, 255, 0.05); /* Vidro fumê ultra sutil */
+    border: 1px solid rgba(244, 241, 234, 0.15);
+    border-radius: 24px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.wallpaper-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(226, 168, 124, 0.6); /* Borda brilha no Terracota ao passar o mouse */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Container para forçar a imagem a parecer uma tela de celular (9:16) */
+.img-container {
+    width: 100%;
+    height: 380px; /* Bem alto para valorizar o formato vertical */
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Corta perfeitamente sem deformar */
+    transition: transform 0.5s ease;
+}
+
+.wallpaper-card:hover .img-container img {
+    transform: scale(1.04); /* Micro zoom elegante na foto ao dar hover */
+}
+
+/* Rodapé do Card com as Informações e Botão */
+.wallpaper-info {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.wallpaper-info h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #f4f1ea;
+    margin-bottom: 0;
+}
+
+/* Botão de Download estilizado com o Marrom Terracota do Doguinho */
+.btn-download {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    background-color: #d37c3f; /* Marrom Terracota Vivo da paleta */
+    color: #111625 !important; /* Texto escuro para contraste violento e leitura limpa */
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    width: 100%;
+    max-width: 200px;
+    transition: all 0.2s ease-in-out !important;
+    box-shadow: 0 4px 12px rgba(211, 124, 63, 0.2);
+}
+
+.btn-download:hover {
+    background-color: #b86229; /* Tom de terracota mais profundo no hover */
+    box-shadow: 0 6px 18px rgba(211, 124, 63, 0.4);
+    transform: scale(1.02);
+    color: #111625 !important;
+}
+
+.btn-download::before {
+    content: "📥 " !important; /* Ícone de bandeja de download combinando */
+    font-size: 0.95rem;
+    margin-right: 6px;
+}
+
+.btn-download:active {
+    transform: scale(0.98);
+}
